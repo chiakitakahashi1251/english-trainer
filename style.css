@@ -1,102 +1,159 @@
-/* ===== RESET & BASE ===== */
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
   background: linear-gradient(135deg, #667eea, #764ba2);
 
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
 
-  padding: 12px;
-  font-size: 18px; /* ベース大きめ */
+  padding: 16px;
+
+  color: #fff;
 }
 
 /* ===== CONTAINER ===== */
 .container {
   width: 100%;
-  max-width: 100%;
-  padding: 0;
-  color: #fff;
-  box-sizing: border-box;
+  max-width: 520px;
 }
 
 /* ===== CARD ===== */
 .card {
+  width: 100%;
+
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(18px);
+
   border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  padding: 22px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+
+  animation: fadeIn 0.4s ease;
 }
 
-/* ===== HEADINGS ===== */
+/* ===== TYPOGRAPHY ===== */
 h1 {
-  font-size: 34px;
-  margin-bottom: 18px;
+  font-size: 30px;
+  margin: 0 0 18px;
 }
 
 h2 {
-  font-size: 28px;
-  margin-bottom: 18px;
+  font-size: 24px;
+  margin: 0 0 18px;
 }
 
 h3 {
-  margin-top: 16px;
-  font-size: 14px;
-  opacity: 0.8;
+  font-size: 12px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  opacity: 0.7;
   letter-spacing: 1px;
 }
 
-/* ===== LABEL ===== */
-label {
-  display: inline-block;
-  margin: 6px 8px;
+/* ===== START SCREEN ===== */
+#startScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===== OPTION（神UI） ===== */
+.option {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.option input {
+  display: none;
+}
+
+.option span {
+  display: block;
+  width: 100%;
+  padding: 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+
+  font-size: 16px;
+  text-align: center;
+
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* タップ */
+.option span:active {
+  transform: scale(0.97);
+}
+
+/* 選択状態（重要） */
+.option input:checked + span {
+  background: #fff;
+  color: #333;
+  font-weight: 600;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transform: scale(1.02);
 }
 
 /* ===== INPUT ===== */
 input[type="number"] {
-  margin-top: 10px;
-  padding: 16px;
+  width: 100%;
+  margin-top: 6px;
+
+  padding: 14px;
+  font-size: 16px;
+
   border-radius: 12px;
   border: none;
-  width: 100%;
-  font-size: 16px;
 }
 
 /* ===== BUTTON ===== */
 button {
-  border: none;
-  border-radius: 16px;
-  padding: 18px;
-  margin-top: 12px;
   width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
+  margin-top: 14px;
 
-  min-height: 56px;
-  transition: 0.12s ease;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+
+  border-radius: 14px;
+  border: none;
+
+  min-height: 52px;
+
+  cursor: pointer;
+  transition: 0.15s ease;
 }
 
 /* START */
 #startScreen button {
-  background: #ffffff;
+  background: #fff;
   color: #333;
-  margin-top: 20px;
 }
 
-/* タップ時 */
+/* タップ */
 button:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
 /* ===== QUESTION ===== */
 #question {
-  font-size: 30px;
-  line-height: 1.4;
+  font-size: 26px;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 
@@ -104,29 +161,38 @@ button:active {
 #choices {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 #choices button {
-  background: rgba(255,255,255,0.95);
+  background: #fff;
   color: #333;
+
   text-align: left;
-  padding: 18px;
-  border-radius: 16px;
-  font-size: 19px;
+
+  padding: 16px;
+  font-size: 16px;
+
+  border-radius: 14px;
+
+  transition: 0.15s;
+}
+
+#choices button:active {
+  transform: scale(0.97);
 }
 
 /* ===== RESULT ===== */
 #result {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 18px;
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* ===== SCORE ===== */
 #appScreen p {
-  margin-top: 15px;
-  font-size: 16px;
+  margin-top: 14px;
+  font-size: 14px;
   opacity: 0.9;
 }
 
@@ -145,49 +211,45 @@ button:active {
 
 #reviewList div {
   background: rgba(255,255,255,0.18);
-  padding: 14px;
+  padding: 12px;
   border-radius: 12px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 1.4;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-/* ===== 💻 PCだけ調整 ===== */
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== PC最適化 ===== */
 @media (min-width: 768px) {
 
   .container {
-    /* max-width: 480px; */
-    margin: 0 auto;
+    max-width: 420px;
   }
 
-  .card {
-    padding: 28px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  #question {
-    font-size: 22px;
-  }
+  h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  #question { font-size: 22px; }
 
   button {
-    font-size: 16px;
-    padding: 14px;
-  }
-
-  #choices button {
     font-size: 15px;
   }
 
-  /* hoverはPCのみ */
+  #choices button {
+    font-size: 14px;
+  }
+
   button:hover {
     transform: translateY(-2px);
-    opacity: 0.95;
   }
 }
