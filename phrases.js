@@ -49,7 +49,6 @@ const phrases = [
 { en: "In other words…", jp: "言い換えると" },
 { en: "For example…", jp: "例えば" },
 { en: "I guess…", jp: "たぶん" },
-{ en: "en", jp: "jp" },
 { en: "Give me a second.", jp: "ちょっと待って" },
 { en: "Hold on.", jp: "待って" },
 { en: "Let me check.", jp: "確認するね" },
