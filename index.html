@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>English Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- START SCREEN -->
+  <div id="startScreen" class="card">
+
+    <h1>English Trainer</h1>
+
+    <h3>MODE</h3>
+
+    <label>
+      <input type="radio" name="mode" value="enToJp" checked>
+      EN → JA
+    </label>
+
+    <label>
+      <input type="radio" name="mode" value="jpToEn">
+      JA → EN
+    </label>
+
+    <hr>
+
+    <h3>HOW MANY</h3>
+
+    <label><input type="radio" name="limit" value="10" checked> 10</label>
+    <label><input type="radio" name="limit" value="20"> 20</label>
+    <label><input type="radio" name="limit" value="-1"> Infinity</label>
+    <label><input type="radio" name="limit" value="custom"> Custom</label>
+
+    <input id="customLimit" type="number" placeholder="Enter number" style="display:none;">
+
+    <br><br>
+
+    <button onclick="startApp()">START</button>
+
+  </div>
+
+  <!-- APP SCREEN -->
+  <div id="appScreen" class="card" style="display:none;">
+
+    <h2 id="question"></h2>
+
+    <!-- 4択 -->
+    <div id="choices"></div>
+
+    <p id="result"></p>
+
+    <p>
+      Score: <span id="score">0</span> |
+      Streak: <span id="streak">0</span>
+    </p>
+
+  </div>
+
+  <!-- END SCREEN -->
+  <div id="endScreen" class="card" style="display:none; text-align:center;">
+
+    <h2>RESULT</h2>
+
+    <p>Score: <span id="finalScore"></span></p>
+    <p>Streak: <span id="finalStreak"></span></p>
+
+    <!-- 👇 間違い復習 -->
+    <div id="reviewSection" style="display:none; margin-top:20px;">
+      <h3>Review Mistakes</h3>
+      <div id="reviewList"></div>
+    </div>
+
+    <button onclick="restartGame()">Try again</button>
+    <button onclick="backToMenu()">Back to menu</button>
+
+  </div>
+
+</div>
+
+<script src="phrases.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
