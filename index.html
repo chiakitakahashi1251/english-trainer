@@ -52,16 +52,14 @@
       <span>Custom</span>
     </label>
 
-    <input id="customLimit" type="number" placeholder="Enter number" style="display:none;">
-
-    <br>
+    <input id="customLimit" type="number" placeholder="Enter number" class="hidden">
 
     <button onclick="startApp()">START</button>
 
   </div>
 
   <!-- APP SCREEN -->
-  <div id="appScreen" class="card" style="display:none;">
+  <div id="appScreen" class="card hidden">
 
     <h2 id="question"></h2>
 
@@ -78,15 +76,15 @@
   </div>
 
   <!-- END SCREEN -->
-  <div id="endScreen" class="card" style="display:none; text-align:center;">
+  <div id="endScreen" class="card hidden" style="text-align:center;">
 
     <h2>RESULT</h2>
 
     <p>Score: <span id="finalScore"></span></p>
     <p>Streak: <span id="finalStreak"></span></p>
 
-    <!-- 👇 間違い復習 -->
-    <div id="reviewSection" style="display:none; margin-top:20px;">
+    <!-- 間違い復習 -->
+    <div id="reviewSection" class="hidden" style="margin-top:20px;">
       <h3>Review Mistakes</h3>
       <div id="reviewList"></div>
     </div>
