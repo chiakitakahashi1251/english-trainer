@@ -10,11 +10,13 @@ body {
   align-items: flex-start;
 
   padding: 12px;
+  font-size: 18px; /* ベース大きめ */
 }
 
 /* ===== CONTAINER ===== */
 .container {
   width: 100%;
+  max-width: 100%;
   padding: 0;
   color: #fff;
   box-sizing: border-box;
@@ -22,28 +24,27 @@ body {
 
 /* ===== CARD ===== */
 .card {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 /* ===== HEADINGS ===== */
 h1 {
-  font-size: 30px;
+  font-size: 34px;
   margin-bottom: 18px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 18px;
 }
 
 h3 {
   margin-top: 16px;
-  font-size: 13px;
+  font-size: 14px;
   opacity: 0.8;
   letter-spacing: 1px;
 }
@@ -58,7 +59,7 @@ label {
 /* ===== INPUT ===== */
 input[type="number"] {
   margin-top: 10px;
-  padding: 14px;
+  padding: 16px;
   border-radius: 12px;
   border: none;
   width: 100%;
@@ -69,15 +70,15 @@ input[type="number"] {
 button {
   border: none;
   border-radius: 16px;
-  padding: 16px;
+  padding: 18px;
   margin-top: 12px;
   width: 100%;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   cursor: pointer;
 
-  min-height: 52px; /* 指サイズ */
-  transition: 0.15s;
+  min-height: 56px;
+  transition: 0.12s ease;
 }
 
 /* START */
@@ -87,14 +88,15 @@ button {
   margin-top: 20px;
 }
 
-/* HOVER（PCだけ効くように後で制御） */
+/* タップ時 */
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 /* ===== QUESTION ===== */
 #question {
-  font-size: 26px;
+  font-size: 30px;
+  line-height: 1.4;
   margin-bottom: 20px;
 }
 
@@ -109,22 +111,22 @@ button:active {
   background: rgba(255,255,255,0.95);
   color: #333;
   text-align: left;
-  padding: 16px;
+  padding: 18px;
   border-radius: 16px;
-  font-size: 17px;
+  font-size: 19px;
 }
 
 /* ===== RESULT ===== */
 #result {
   margin-top: 15px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* ===== SCORE ===== */
 #appScreen p {
   margin-top: 15px;
-  font-size: 15px;
+  font-size: 16px;
   opacity: 0.9;
 }
 
@@ -142,18 +144,19 @@ button:active {
 }
 
 #reviewList div {
-  background: rgba(255,255,255,0.15);
-  padding: 12px;
+  background: rgba(255,255,255,0.18);
+  padding: 14px;
   border-radius: 12px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.4;
 }
 
-/* ===== 💻 PCだけ上書き ===== */
+/* ===== 💻 PCだけ調整 ===== */
 @media (min-width: 768px) {
 
   .container {
-    max-width: 480px;
+    /* max-width: 480px; */
     margin: 0 auto;
   }
 
@@ -182,10 +185,9 @@ button:active {
     font-size: 15px;
   }
 
-  /* hoverはPCだけ */
+  /* hoverはPCのみ */
   button:hover {
     transform: translateY(-2px);
     opacity: 0.95;
   }
-
 }
