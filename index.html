@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>English Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,30 +14,47 @@
 
     <h1>English Trainer</h1>
 
+    <!-- MODE -->
     <h3>MODE</h3>
 
-    <label>
+    <label class="option">
       <input type="radio" name="mode" value="enToJp" checked>
-      EN → JA
+      <span>EN → JA</span>
     </label>
 
-    <label>
+    <label class="option">
       <input type="radio" name="mode" value="jpToEn">
-      JA → EN
+      <span>JA → EN</span>
     </label>
 
     <hr>
 
+    <!-- HOW MANY -->
     <h3>HOW MANY</h3>
 
-    <label><input type="radio" name="limit" value="10" checked> 10</label>
-    <label><input type="radio" name="limit" value="20"> 20</label>
-    <label><input type="radio" name="limit" value="-1"> Infinity</label>
-    <label><input type="radio" name="limit" value="custom"> Custom</label>
+    <label class="option">
+      <input type="radio" name="limit" value="10" checked>
+      <span>10 Questions</span>
+    </label>
+
+    <label class="option">
+      <input type="radio" name="limit" value="20">
+      <span>20 Questions</span>
+    </label>
+
+    <label class="option">
+      <input type="radio" name="limit" value="-1">
+      <span>Infinity</span>
+    </label>
+
+    <label class="option">
+      <input type="radio" name="limit" value="custom">
+      <span>Custom</span>
+    </label>
 
     <input id="customLimit" type="number" placeholder="Enter number" style="display:none;">
 
-    <br><br>
+    <br>
 
     <button onclick="startApp()">START</button>
 
